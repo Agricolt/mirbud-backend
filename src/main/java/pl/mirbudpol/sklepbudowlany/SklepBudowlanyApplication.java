@@ -37,7 +37,9 @@ public class SklepBudowlanyApplication {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/api/item/recommended").allowedOrigins("http://mirbud.onlinewebshop.net/");
+                registry.addMapping("/**");
+                registry.addMapping("/api/item/recommended").allowedOrigins("http://mirbud.onlinewebshop.net");
+                registry.addMapping("/api/item/recommended").allowedOrigins("http://localhost:8080");
             }
         };
     }
